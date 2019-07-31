@@ -270,12 +270,27 @@
 
 			<div style="overflow: hidden;">
 
-				<ul style="list-style: none;">
-					<li style="width: 150px;height: 216;float: left;margin: 0 8px 0 0;padding: 0 18px 15px;text-align: center;"><img src="${pageContext.request.contextPath}/products/1/cs10001.jpg" width="130px" height="130px" /></li>
-				</ul>
+				<c:if test="${empty requestScope.goodsBrowsing}">
+					没有商品浏览记录
+				</c:if>
+
+				<c:if test="${not empty requestScope.goodsBrowsing}">
+					<ul style="list-style: none;">
+						<c:forEach items="${requestScope.goodsBrowsing}" var="product">
+							<li style="width: 150px;height: 216;float: left;margin: 0 8px 0 0;padding: 0 18px 15px;text-align: center;">
+								<img src="${pageContext.request.contextPath}/${product.pimage}" width="130px" height="130px" />
+							</li>
+						</c:forEach>
+					</ul>
+
+				</c:if>
 
 			</div>
+
+
 		</div>
+
+
 		<div style="margin-top:50px;">
 			<img src="${pageContext.request.contextPath}/image/footer.jpg" width="100%" height="78" alt="我们的优势" title="我们的优势" />
 		</div>

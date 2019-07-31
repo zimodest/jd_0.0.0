@@ -7,7 +7,9 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
+import org.junit.jupiter.api.Test;
 
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -47,7 +49,20 @@ public class ProductDaoImpl implements ProductDao {
 
     @Override
     public List<Product> findHot() throws Exception {
-        String sql = "select * from product where is_hot = 1";
+        String sql = "select * from product where is_hot = 1 limit 9";
         return qr.query(sql,new BeanListHandler<>(Product.class));
     }
+
+    /**
+     *
+     * @param ints 格式(1,2,3)
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<Product> findByIds(String ints) throws Exception {
+        String sql = "select * from product where pid in "+ ints;
+        return qr.query(sql ,new BeanListHandler<>(Product.class));
+    }
+
 }

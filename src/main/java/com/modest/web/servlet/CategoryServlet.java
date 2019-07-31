@@ -31,10 +31,7 @@ public class CategoryServlet extends BaseServlet {
 
         //设置响应格式
         response.setContentType("application/json;charset=utf-8");
-
-        System.out.println(cList);
         String json = JsonUtil.list2json(cList);
-        System.out.println(json);
         response.setContentType("text/html;charset=utf-8");
         response.getWriter().print(json);
     }

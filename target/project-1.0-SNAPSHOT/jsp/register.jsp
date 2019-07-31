@@ -101,7 +101,7 @@ font {
             //用于校验的正则表达式
             var reg_confirmPassword = /^\w{8,20}$/;
 
-            var flag = reg_confirmPassword.test(confirmPasswordValue) && (passwordValue === confirmPasswordValue);
+            var flag = reg_confirmPassword.test(confirmPasswordValue) && checkPassword();
 
             if(flag) {
                 confirmPassword.css("border","2px solid green");

@@ -86,7 +86,6 @@
                 //在ul的添加子标签li
                 $ul.append($("<li><a href='${pageContext.request.contextPath}/product?method=findByPage&cid="+this.cid+"&currentPage=1'>"+this.cname+"</a></li>")) ;
             }) ;
-
         },"json") ;
         //在Servlet定义响应格式：response.setContentType("application/json;charset=utf-8")
 

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html>
 
@@ -39,65 +40,65 @@
 
 	<body>
 
-		
+		<jsp:include page="head.jsp" />
 			<!--
             	时间：2015-12-30
             	描述：菜单栏
             -->
-			<div class="container-fluid">
-				<div class="col-md-4">
-					<img src="${pageContext.request.contextPath}/img/logo2.png" />
-				</div>
-				<div class="col-md-5">
-					<img src="${pageContext.request.contextPath}/img/header.png" />
-				</div>
-				<div class="col-md-3" style="padding-top:20px">
-					<ol class="list-inline">
-						<li><a href="login.htm">登录</a></li>
-						<li><a href="register.htm">注册</a></li>
-						<li><a href="cart.htm">购物车</a></li>
-					</ol>
-				</div>
-			</div>
-			<!--
-            	时间：2015-12-30
-            	描述：导航条
-            -->
-			<div class="container-fluid">
-				<nav class="navbar navbar-inverse">
-					<div class="container-fluid">
-						<!-- Brand and toggle get grouped for better mobile display -->
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-							<a class="navbar-brand" href="#">首页</a>
-						</div>
+			<%--<div class="container-fluid">--%>
+				<%--<div class="col-md-4">--%>
+					<%--<img src="${pageContext.request.contextPath}/img/logo2.png" />--%>
+				<%--</div>--%>
+				<%--<div class="col-md-5">--%>
+					<%--<img src="${pageContext.request.contextPath}/img/header.png" />--%>
+				<%--</div>--%>
+				<%--<div class="col-md-3" style="padding-top:20px">--%>
+					<%--<ol class="list-inline">--%>
+						<%--<li><a href="login.htm">登录</a></li>--%>
+						<%--<li><a href="register.htm">注册</a></li>--%>
+						<%--<li><a href="cart.htm">购物车</a></li>--%>
+					<%--</ol>--%>
+				<%--</div>--%>
+			<%--</div>--%>
+			<%--<!----%>
+            	<%--时间：2015-12-30--%>
+            	<%--描述：导航条--%>
+            <%---->--%>
+			<%--<div class="container-fluid">--%>
+				<%--<nav class="navbar navbar-inverse">--%>
+					<%--<div class="container-fluid">--%>
+						<%--<!-- Brand and toggle get grouped for better mobile display -->--%>
+						<%--<div class="navbar-header">--%>
+							<%--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">--%>
+								<%--<span class="sr-only">Toggle navigation</span>--%>
+								<%--<span class="icon-bar"></span>--%>
+								<%--<span class="icon-bar"></span>--%>
+								<%--<span class="icon-bar"></span>--%>
+							<%--</button>--%>
+							<%--<a class="navbar-brand" href="#">首页</a>--%>
+						<%--</div>--%>
 
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-							<ul class="nav navbar-nav">
-								<li class="active"><a href="#">手机数码<span class="sr-only">(current)</span></a></li>
-								<li><a href="#">电脑办公</a></li>
-								<li><a href="#">电脑办公</a></li>
-								<li><a href="#">电脑办公</a></li>
-							</ul>
-							<form class="navbar-form navbar-right" role="search">
-								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Search">
-								</div>
-								<button type="submit" class="btn btn-default">Submit</button>
-							</form>
+						<%--<!-- Collect the nav links, forms, and other content for toggling -->--%>
+						<%--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">--%>
+							<%--<ul class="nav navbar-nav">--%>
+								<%--<li class="active"><a href="#">手机数码<span class="sr-only">(current)</span></a></li>--%>
+								<%--<li><a href="#">电脑办公</a></li>--%>
+								<%--<li><a href="#">电脑办公</a></li>--%>
+								<%--<li><a href="#">电脑办公</a></li>--%>
+							<%--</ul>--%>
+							<%--<form class="navbar-form navbar-right" role="search">--%>
+								<%--<div class="form-group">--%>
+									<%--<input type="text" class="form-control" placeholder="Search">--%>
+								<%--</div>--%>
+								<%--<button type="submit" class="btn btn-default">Submit</button>--%>
+							<%--</form>--%>
 
-						</div>
-						<!-- /.navbar-collapse -->
-					</div>
-					<!-- /.container-fluid -->
-				</nav>
-			</div>
+						<%--</div>--%>
+						<%--<!-- /.navbar-collapse -->--%>
+					<%--</div>--%>
+					<%--<!-- /.container-fluid -->--%>
+				<%--</nav>--%>
+			<%--</div>--%>
 
 
 		<div class="container">
@@ -115,27 +116,31 @@
 								<th>小计</th>
 								<th>操作</th>
 							</tr>
-							<tr class="active">
-								<td width="60" width="40%">
-									<input type="hidden" name="id" value="22">
-									<img src="${pageContext.request.contextPath}/image/dadonggua.jpg" width="70" height="60">
-								</td>
-								<td width="30%">
-									<a target="_blank"> 有机蔬菜      大冬瓜...</a>
-								</td>
-								<td width="20%">
-									￥298.00
-								</td>
-								<td width="10%">
-									<input type="text" name="quantity" value="1" maxlength="4" size="10">
-								</td>
-								<td width="15%">
-									<span class="subtotal">￥596.00</span>
-								</td>
-								<td>
-									<a href="javascript:;" class="delete">删除</a>
-								</td>
-							</tr>
+							<c:forEach items="${requestScope.cart}" var="product">
+								<tr class="active">
+									<td width="60" width="40%">
+										<input type="hidden" name="id" value="22">
+										<img src="${pageContext.request.contextPath}/${product.pimage}" width="70" height="60">
+									</td>
+
+									<td width="30%">
+										<a target="_blank"> ${product.pname}</a>
+                                            <%--${product.pname}--%>
+									</td>
+									<td width="20%">
+										${product.market_price}
+									</td>
+									<td width="10%">
+										<input type="text" name="quantity" value="1" maxlength="4" size="10">
+									</td>
+									<td width="15%">
+										<span class="subtotal">￥${product.shop_price * 3}</span>
+									</td>
+									<td>
+										<a href="javascript:;" class="delete">删除</a>
+									</td>
+								</tr>
+							</c:forEach>
 						</tbody>
 					</table>
 				</div>

@@ -6,7 +6,10 @@ import com.modest.domain.Category;
 import com.modest.domain.PageBean;
 import com.modest.domain.Product;
 import com.modest.service.ProductService;
+import com.modest.utils.CookUtils;
 
+import javax.servlet.http.Cookie;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -17,8 +20,6 @@ import java.util.List;
  */
 public class ProductServiceImpl implements ProductService {
     private ProductDao productDao = new ProductDaoImpl();
-
-
 
     @Override
     public Product getById(String id) throws Exception {
@@ -49,5 +50,18 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> findHot() throws Exception {
         return productDao.findHot();
+    }
+
+    @Override
+    public List<Product> findByIds(String ints) throws Exception {
+
+        String[] ins = ints.split("-");
+        StringBuilder sql = new StringBuilder("(");
+        for (int i=0; i<ins.length-1; i++) {
+            sql.append(ins[i]).append(",");
+        }
+        sql.append(ins[ins.length - 1]).append(")");
+
+        return productDao.findByIds(sql.toString());
     }
 }
